@@ -36,6 +36,7 @@ _建立一个仓库，放一些学习Python过程中遇到的问题及解决方�
 3.激活虚拟环境
 Linux:source venv/bin/activate
 Windows: venv\Scripts\activate
+Powshell: . venv\scripts\activate
 
 4.退出虚拟环境
 deactivate
@@ -51,6 +52,8 @@ deactivate
 
 6.vscode里面使用虚拟环境
 只要vscode发现你项目文件里面有venv文件夹，好像就会自动帮你在虚拟环境下调试项目，vscode的左下角也可以选择调试环境。
+
+7.在powshell运行虚拟环境时会失败。此时是因为powshell禁止运行不信任脚本。以管理员身份运行powshell，输入Set-ExecutionPolicy RemoteSigned，然后选择“是”，这个问题就可以解决。但是用powshell激活虚拟环境时，与CMD对比，要在前面多添加一个点,如：. venv\scripts\activate
 
 ## third:vscode settings Sync 同步设置
 

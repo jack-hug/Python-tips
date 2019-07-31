@@ -50,6 +50,6 @@ deactivate
 
 注1：两个快捷键 Shift+Alt+U上传，Shift+Alt+D下载。
 
-注2：当提示__Sync:invlid Gist__时，一定要检查一下设置里面的gist是否已经存在。点击左下角设置-输入gist，在用户及工作区都检查一下gist,一定要保证是空。
+注2：当提示**Sync:invalid gist id**时，一定要检查一下设置里面的gist是否已经存在。点击左下角设置-输入gist，在用户及工作区都检查一下gist,一定要保证是空。
 
 

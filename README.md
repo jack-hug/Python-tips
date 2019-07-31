@@ -40,7 +40,7 @@ deactivate
 
 ## third:vscode settings Sync 同步设置
 
-之前因为一次识操作，在使用sync同步设置时候，一直出现一个错误：Sync:invlid Gist id,重置了很多遍都没有效果。后来按如下操作，总算搞定了。
+之前因为一次误操作，在使用sync同步设置时候，一直出现一个错误：Sync:inavlid gist id,重置了很多遍都没有效果。后来按如下操作，总算搞定了。
 
 1.安装Sync，若已经安装，可用快捷键 Ctrl+Shift+P，输入 Sync,找到重置扩展设置（Reset Extension Settings）来使之初始化。
 

@@ -38,6 +38,15 @@ Windows: venv\Scripts\activate
 4.退出虚拟环境
 deactivate
 
+5.虚拟环境迁移
+当需要在不同的虚拟环境使用相同的包时，可以用pip freeze>requirments.txt命令。
+举例：有虚拟环境venv1和venv2，venv2要装上venv1里面的所有包。
+解决步骤：
+(1).在venv1下运行命令行:pip freeze>requirments.txt，将所以的包导出到requirments.txt文件。
+(2).把requirments.txt复制到venv2项目的根目录。
+(3).执行命令安装包：pip i https://mirrors.aliyun.com/pypi/simple -r requirments.txt 
+这样就会把venv1里面所有的包都安装到venv2的虚拟环境里面
+
 ## third:vscode settings Sync 同步设置
 
 之前因为一次误操作，在使用sync同步设置时候，一直出现一个错误：Sync:inavlid gist id,重置了很多遍都没有效果。后来按如下操作，总算搞定了。
@@ -51,5 +60,4 @@ deactivate
 注1：两个快捷键 Shift+Alt+U上传，Shift+Alt+D下载。
 
 注2：当提示**Sync:invalid gist id**时，一定要检查一下设置里面的gist是否已经存在。点击左下角设置-输入gist，在用户及工作区都检查一下gist,一定要保证是空。
-
 

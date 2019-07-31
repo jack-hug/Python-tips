@@ -38,3 +38,18 @@ Windows: venv\Scripts\activate
 4.退出虚拟环境
 deactivate
 
+## third:vscode settings Sync 同步设置
+
+之前因为一次识操作，在使用sync同步设置时候，一直出现一个错误：Sync:invlid Gist id,重置了很多遍都没有效果。后来按如下操作，总算搞定了。
+
+1.安装Sync，若已经安装，可用快捷键 Ctrl+Shift+P，输入 Sync,找到重置扩展设置（Reset Extension Settings）来使之初始化。
+
+2.在Sync 首页点击 LOGIN WITH GITHUB 按钮，登录github；之后会跳出一个页面，如果是第一次登录或者误删了gists，可以点击skip,之后会自动帮你创建一个名为cloudSettings的gist，稍等十几秒，Sync自动帮你把目前的配置上传到github。
+
+3.在其他电脑打开VSCODE，装好Sync扩展，同样步骤登录，此时可能会要求输入Token,输入之后就可以同步了。
+
+注1：两个快捷键 Shift+Alt+U上传，Shift+Alt+D下载。
+
+注2：当提示__Sync:invlid Gist__时，一定要检查一下设置里面的gist是否已经存在。点击左下角设置-输入gist，在用户及工作区都检查一下gist,一定要保证是空。
+
+

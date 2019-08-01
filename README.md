@@ -23,6 +23,7 @@ _建立一个仓库，放一些学习Python过程中遇到的问题及解决方�
 有两种方法可以使用：
 (1).临时使用
 pip下载时加参数。例子：pip install -i https://mirrors.aliyun.com/pypi/simple/ flask
+
 (2).永久使用
 在用户文件目录下建立一个pip文件夹，如：C:\\Users\\HUG\\pip,然后建立一个名为pip.ini的文件，在文件内添加 
 

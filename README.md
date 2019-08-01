@@ -55,7 +55,7 @@ deactivate
 解决步骤：
 (1).在venv1下运行命令行:pip freeze>requirments.txt，将所以的包导出到requirments.txt文件。
 (2).把requirments.txt复制到venv2项目的根目录。
-(3).在虚拟环境venv2下执行命令安装包：pip install -i https://mirrors.aliyun.com/pypi/simple/ -r requirements.txt 
+(3).在虚拟环境venv2下执行命令安装包：pip install (-i https://mirrors.aliyun.com/pypi/simple/ *临时使用国内源时添加*) -r requirements.txt 
 这样就会把venv1里面所有的包都安装到venv2的虚拟环境里面
 
 6.vscode里面使用虚拟环境

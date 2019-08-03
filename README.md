@@ -79,3 +79,7 @@ deactivate
 
 ## fourth:pylint与flake8
 在敲码过程中，发现总是提示代码有问题，一开始我以为是真的有问题，后面才发现，是pylint这个代码解析工具检查得太严格了。我打算换成flake8，但是目前不知道这两者之间有什么区别。等我多了解一些之后，会回来补充这条tip。
+
+## fifth:操作MYSQL数据库时遇到的问题
+
+原来在使用pymysql驱动时,操作数据库总会有一个提示：Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 478")，查了一下，发现是驱动的问题，后面换成了mysql-connector驱动，就没有问题了。

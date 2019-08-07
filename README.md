@@ -88,7 +88,9 @@ deactivate
 
 书中第8.6.1节 确认用户账户
 
-这一小节代码一处问题，db.session.add(user)之后应该要再进行提交:db.session.commit(),但无论是书中还是github上的源代码都没有说到这处，不懂是数据库的原因还是什么原因。先记下来，以后有机会再慢慢了解
+*这一小节代码一处问题，db.session.add(user)之后应该要再进行提交:db.session.commit(),但无论是书中还是github上的源代码都没有说到这处，不懂是数据库的原因还是什么原因。先记下来，以后有机会再慢慢了解.*
+
+**更新**：找到问题所在了，原来db.session.commit()的操作是在视图函数views.py里面操作的，在models.py 里面做出db.session.add()的操作，再在view.py里面做出db.session.commit()，明白明白。
 
 ## sixth: 数据库编码类型
 

@@ -53,7 +53,7 @@ deactivate
 当需要在不同的虚拟环境使用相同的包时，可以用pip freeze>requirments.txt命令。
 举例：有虚拟环境venv1和venv2，venv2要装上venv1里面的所有包。
 解决步骤：
-(1).在venv1下运行命令行:pip freeze>requirments.txt，将所以的包导出到requirments.txt文件。
+(1).在venv1下运行命令行:pip freeze>requirements.txt，将所以的包导出到requirements.txt文件。
 (2).把requirments.txt复制到venv2项目的根目录。
 (3).在虚拟环境venv2下执行命令安装包：pip install (-i https://mirrors.aliyun.com/pypi/simple/ *临时使用国内源时添加*) -r requirements.txt 
 这样就会把venv1里面所有的包都安装到venv2的虚拟环境里面
@@ -83,3 +83,16 @@ deactivate
 ## fifth:操作MYSQL数据库时遇到的问题
 
 原来在使用pymysql驱动时,操作数据库总会有一个提示：Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 478")，查了一下，发现是驱动的问题，后面换成了mysql-connector驱动，就没有问题了。
+
+## ubuntu下切换到python3 ##
+
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+
+## 切换回Python2 ##
+
+sudo update-alternatives --config python
+
+## 安装pip3 ##
+
+sudo apt-get install python3-pip 

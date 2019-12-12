@@ -80,19 +80,24 @@ deactivate
 ## fourth:pylint与flake8
 在敲码过程中，发现总是提示代码有问题，一开始我以为是真的有问题，后面才发现，是pylint这个代码解析工具检查得太严格了。我打算换成flake8，但是目前不知道这两者之间有什么区别。等我多了解一些之后，会回来补充这条tip。
 
-## fifth:操作MYSQL数据库时遇到的问题
+## fifth：flask Web开发 
 
-原来在使用pymysql驱动时,操作数据库总会有一个提示：Warning: (1366, "Incorrect string value: '\\xD6\\xD0\\xB9\\xFA\\xB1\\xEA...' for column 'VARIABLE_VALUE' at row 478")，查了一下，发现是驱动的问题，后面换成了mysql-connector驱动，就没有问题了。
+书中第8.4.4节 登入用户 
 
-## ubuntu下切换到python3 ##
+这一节花费了很长的时间，一直弹出一个错误，说是check_password_hash出错，我各自找Bug,各种复制粘贴代码，还是找不到原因，后来才发现，因为我在config中的SECRET_KEY用了一个转义字符 \' 。原来的是[SECRET_KEY = 'This is jack-hug\'s KEY' or os.environ.get('SECRET_KEY')],删除转义符改为[SECRET_KEY = 'This is jack-hug KEY' or os.environ.get('SECRET_KEY')]之后终于成功了！很开心，凭借自己的努力花两三天找到了一个Bug,不过找的过程实在痛苦。
 
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2 100
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 150
+书中第8.6.1节 确认用户账户
 
-## 切换回Python2 ##
+*这一小节代码一处问题，db.session.add(user)之后应该要再进行提交:db.session.commit(),但无论是书中还是github上的源代码都没有说到这处，不懂是数据库的原因还是什么原因。先记下来，以后有机会再慢慢了解.*
 
-sudo update-alternatives --config python
+**更新**：找到问题所在了，原来db.session.commit()的操作是在视图函数views.py里面操作的，在models.py 里面做出db.session.add()的操作，再在view.py里面做出db.session.commit()，明白明白。
 
-## 安装pip3 ##
+## sixth: 数据库编码类型
 
-sudo apt-get install python3-pip 
+数据库编码类型有很多种，记得要选择utf8_general_ci或者是utf8mb4_general_ci,后面一个支持的字符更多一些。如果数据库的编码类型选择错误，网站很容易会出现各种各样的bug。慎重！
+
+
+## Jinja2 Bug：
+
+在html里下 JinJa2 语法时，**{% block %}** 语句即使被注释掉了，也依然生效。
+这个坑要牢记。不然很难排查。

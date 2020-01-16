@@ -50,13 +50,13 @@ Powshell: . venv\scripts\activate
 deactivate
 
 5.虚拟环境迁移
-当需要在不同的虚拟环境使用相同的包时，可以用pip freeze>requirments.txt命令。
+当需要在不同的虚拟环境使用相同的包时，可以用pip freeze>requirements.txt命令。
 举例：有虚拟环境venv1和venv2，venv2要装上venv1里面的所有包。
 解决步骤：
 (1).在venv1下运行命令行:pip freeze>requirements.txt，将所以的包导出到requirements.txt文件。
-(2).把requirments.txt复制到venv2项目的根目录。
+(2).requirements.txt复制到venv2项目的根目录。
 (3).在虚拟环境venv2下执行命令安装包：pip install (-i https://mirrors.aliyun.com/pypi/simple/ *临时使用国内源时添加*) -r requirements.txt 
-这样就会把venv1里面所有的包都安装到venv2的虚拟环境里面
+这样就会把venv1里面所有的包都安装到venv2的虚拟环境里面  pip install -r requirements.txt
 
 6.vscode里面使用虚拟环境
 只要vscode发现你项目文件里面有venv文件夹，好像就会自动帮你在虚拟环境下调试项目，vscode的左下角也可以选择调试环境。

@@ -57,6 +57,7 @@ deactivate
 (2).requirements.txt复制到venv2项目的根目录。
 (3).在虚拟环境venv2下执行命令安装包：pip install (-i https://mirrors.aliyun.com/pypi/simple/ *临时使用国内源时添加*) -r requirements.txt 
 这样就会把venv1里面所有的包都安装到venv2的虚拟环境里面  pip install -r requirements.txt
+(5).不用重置虚拟环境，一次全部删除之前安装的包：pip uninstall -r requirements.txt -y
 
 6.vscode里面使用虚拟环境
 只要vscode发现你项目文件里面有venv文件夹，好像就会自动帮你在虚拟环境下调试项目，vscode的左下角也可以选择调试环境。
@@ -101,3 +102,4 @@ deactivate
 
 在html里下 JinJa2 语法时，**{% block %}** 语句即使被注释掉了，也依然生效。
 这个坑要牢记。不然很难排查。
+
